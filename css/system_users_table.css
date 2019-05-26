@@ -1,0 +1,74 @@
+#services_table_div{
+	/* border:1px solid black; */
+	margin:5px;
+	position:absolute;
+	width:95%;
+	position:absolute;
+	margin-top:140px;
+}
+
+#services_table_div tr,td,th{
+	border:1px solid red;
+	padding:8px 6px;
+	/* width:100%; */
+	margin-left:auto;
+	margin-right:auto;
+	/* position:absolute; */
+}
+#services_table_div table{
+	border-collapse:collapse;
+	width:90%;
+	border:1px solid red;
+	padding:12px 8px;
+}
+
+#save_user{
+	
+	background-color: #adfb97;
+    background-repeat:no-repeat;
+    border: 1px solid #009700;
+    cursor:pointer;
+    /* overflow: hidden; */
+	color:#009700;
+	font-size:20px;
+	font-weight:bold;
+	border-radius:5px;
+}
+
+#add_row{
+	width:30px;
+	cursor:pointer;
+}
+
+#user_input{
+	width:90%;
+}
+
+#i{
+	width:80px;
+	border:1px solid #000;
+	border-radius:5px;
+	padding:4px 4px;
+	font-size:22px;
+	text-align:center;
+}
+
+
+.input{
+	width:140px;
+	border:1px solid #000;
+	border-radius:5px;
+	padding:4px 4px;
+	font-size:22px;
+	text-align:center;
+}
+
+#gender,#activity{
+	font-size:18px;
+	border-radius:5px;
+	padding:4px 4px;
+}
+
+#dateTime{
+	width:320px;
+}

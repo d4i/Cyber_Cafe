@@ -1,0 +1,108 @@
+body{
+	background-repeat:no-repeat;
+	background-size:cover;
+	/* background:fadeout(@black,10%); */
+	padding:8px 8px;
+	margin:8px 8px;
+	float:center;
+}
+
+.btn{
+	font-size:22px;
+	margin-top:12px;
+	background-color:transparent;
+	background-repeat:no-repeat;
+	cursor:pointer;
+	float:left;
+	border:1px solid black;
+	/* border-radius:5px; */	
+	/* background-color:#ffecd9; */
+}
+
+#system_users{
+	border-right:none;	
+}
+
+
+#system_users_table_div{
+	/* border:1px solid black; */		
+	/* display:none; */
+}
+
+#system_users_table{
+	border-collapse:collapse;
+}
+
+table{
+	width:100%;
+	margin:8px;
+}
+
+th,tr,td,thead,tbody{
+	border:1px solid green;
+	border-collapse:collapse;
+}
+
+#cafeName{
+	float:right;
+	border:1px solid #2e8a13;
+	margin-top:40px;
+	margin-right:60px;
+	padding:5px;
+	color:#2e8a13;
+	background-color:#c0f4bb;
+	/* cursor:pointer; */
+	border-radius:5px;
+}
+
+#search{
+	float:right;
+	text-align:center;
+	border:1px solid black;
+	border-radius:5px;
+	font-size:22px;
+	padding:4px 4px;
+	margin:12px;
+	display:none;
+}
+/* 
+#loading_box{
+	border:1px solid black;
+	float:right;
+	margin-right:20px;
+	margin-top:12px;
+	text-align:center;
+	border-radius:5px;
+	font-size:22px;
+	padding:4px 4px;
+	display:none;
+} */
+
+#logo_btn{
+	font-size:12px;
+	/* margin:4px; */
+	background-color:transparent;
+	background-repeat:no-repeat;
+	cursor:pointer;
+	/* float:left; */
+	/* border:1px solid black; */
+	border:none;
+}
+
+#profile{
+	display:none;
+	border:1px solid black;
+	float:right;
+	margin-right:60px; 
+	padding:4px;
+}
+
+.p{
+	font-size:20px;
+	/* margin-top:12px; */
+	background-color:transparent;
+	background-repeat:no-repeat;
+	cursor:pointer;
+	/* float:left; */
+	border:none;
+}

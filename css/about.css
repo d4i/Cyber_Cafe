@@ -1,0 +1,26 @@
+#aboutUs{
+	margin:auto auto;
+	display:block;
+}
+
+body{
+	/* background-color:#e8effd; */
+	/* background-image:url("images/ContactUs.jpg"); */
+	background-repeat:no-repeat;
+	background-attachment: fixed;
+    background-position: right;
+}
+
+#details{
+	text-align:center;
+	/* border:1px solid red; */
+	margin:30px auto;
+	/* display:block; */
+	font-size:28px;
+	font-family:verdana;
+	
+}
+
+#table{
+	/* border:1px solid red; */
+}

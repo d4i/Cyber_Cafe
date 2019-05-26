@@ -1,0 +1,56 @@
+#main{
+	/* width:100%; */
+	border:1px solid green;
+	height:500px;
+}
+
+.chartDiv{
+	border:1px solid blue;
+	width:77%;	
+	padding:8px 12px;
+	/* margin-right:20%; */
+	margin:12px 8px;
+	/* float:left; */
+	/* position:relative; */
+	/* display:inline-block; */
+}
+
+#genderDiv{
+	width:17%;
+	float:right;
+	border:1px solid red;
+	margin:12px 12px;
+	/* position:relative; */
+	/* margin-left:80%; */
+	/* height:200px; */
+}
+
+#genderRatioBtn{
+	cursor:pointer;
+	border:1px solid #000000;
+	width:100px auto;
+	float:right;
+	border:1px solid #800000;
+	background-color:#ffc6c6;
+	color:#800000;
+	margin:20px 20px;
+	padding:4px 4px;
+}
+
+
+
+#monthlyChart,#yearlyChart{
+	display:none;
+}
+
+button{
+	background-color: #adfb97;
+    background-repeat:no-repeat;
+    border: 1px solid #009700;
+    cursor:pointer;
+    overflow: hidden;
+	color:#009700;
+	font-size:20px;
+	font-weight:bold;
+	border-radius:5px;
+}

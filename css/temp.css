@@ -1,0 +1,98 @@
+#header{
+	border:1px solid red;
+	background-color:#ffc4c4;
+	width:60%;
+	height:60px;
+	padding:4px 4px;
+	text-align:center;
+	margin-right:20px;
+	margin-top:10px;
+	float:left;
+}
+
+.hd{
+	border:1px solid red;
+	padding:20px 15px;
+	margin:12px 18px;
+	margin-top:12px;
+	font-size:42px;
+	cursor:pointer;
+	text-align:center;
+	font-family:verdana;
+}
+	
+#pic{
+	border:1px solid magenta;
+	width:90%;
+	height:100px;
+	padding:12px 18px;
+	float:left;
+}
+#form{
+	width:30%;
+	height:200px;
+	border:1px solid green;
+	float:left;
+	margin:20px 40px;
+}
+
+#empty_pic{
+	border:1px solid blue;
+	width:50px;
+	margin-right:20px;
+	margin-top:5px;
+	position:absolute;
+	border-radius:50%;
+	display:inline-block;
+	float:right;
+}
+
+#blah{
+	width:100px;
+	border-radius:50%;
+}
+
+#photo,#uploadPic{
+	margin:18px 20px;
+	border:1px solid blue;
+	width:150px;
+	background-color:transparent;
+	background-repeat:no-repeat;
+	cursor:pointer;
+	border-radius:5px;
+	font-size:25px;
+	float:right;
+}
+
+#uploadPic{
+	width:18px auto;
+	cursor:pointer;
+	font-size:25px;
+	background-color:transparent;
+	background-repeat:no-repeat;
+	border:none;
+}
+
+
+<div id='head'>	
+		<span id='empty_pic'>
+		  <img src='images/a7.png' id='blah' alt='Upload profile'/>
+		</span>	
+	</div>
+	
+	<div id='header'>
+		<span id='Change_profile' class="hd">Change Profile</span>
+		<button id='cv'>Cover Photo</button>
+		<button id='pf'>Profile photo</button>
+		<form action='upload_pic.do' method="post" enctype='multipart/form-data'>
+		  <input type='file' id='photo' style="color:transparent" name="photo"/>
+		  <input type='submit' value='Upload' id='uploadPic' >
+		</form>
+	</div>
+  
+	
+
+
+<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+	<!-- <script src="js/croppie.js"></script> -->
+	
