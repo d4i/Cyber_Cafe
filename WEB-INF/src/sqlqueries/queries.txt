@@ -1,0 +1,393 @@
+??by adding a record in system_users of new date a 
+new entry should be done in days table of that current date.
+
+##use this to group by payment or name.....
+select sum(payment),dayname(cast(start_time as date)) from system_users group by payment,start_time;
+
+create database cyber_cafe;
+
+use cyber_cafe;
+
+create table cafes(
+cafe_id int auto_increment primary key,
+cafe varchar(100) not null unique,
+contact varchar(10) not null unique,
+password varchar(100) not null
+);
+
+create table system-users
+(
+user_id int auto_increment primary key,
+name varchar(30) not null,
+gender varchar(30) not null,
+address varchar(400) not null,
+contact varchar(10) not null,
+system_no int(2) not null,
+start_time time not null,
+end_time time not null,
+payment int(10) not null,
+cafe_id int not null,
+constraint fk_cafe_sys foreign key (cafe_id) reference cafes (cafe_id);
+);
+
+
+alter table system_users 
+add column cafe_id int not null,
+add constraint fk_cafe_sys foreign key (cafe_id) references cafes (cafe_id);
+
+create table activities
+(
+activity_id int auto_increment primary key,
+activity varchar(100) not null
+);
+
+create table non_system_users
+(
+user_id int auto_increment primary key,
+name varchar(30) not null,
+address varchar(400) not null,
+contact varchar(10) not null,
+activity_id int not null,
+constraint fk_act_nsusers foreign key (activity_id) references activities (activity_id),
+start_time time not null,
+end_time time not null
+);
+
+alter table non_system_users
+	add column payment int(10) not null;
+
+insert into activities (activities) values ('MPOnline'),('school project'),('print'),('scan'),('photocopy'),('form fillings'),('pictures'),('others');
+
+create table cafes
+	(
+	cafe_id int auto_increment primary key,
+	cafe_name varchar(100) not null,
+	contact varchar(10) not null,
+	password varchar(100) not null
+	);
+
+
+insert into system_users 
+(name,gender,address,contact,system_no,start_time,end_time,payment,cafe_id,day_id)
+value
+('mohan','male','hs','8929829782',5,'2019-04-21 13:00:00','2019-04-21 15:00:00',214,29,1);
+
+create table days(
+	day_id int auto_increment primary key,
+	day varchar(20) not null
+	);
+
+insert into days (day) values ('Sunday'),('Monday'),('Tuesday'),('Wednesday'),('Thursday'),('Friday'),('Saturday');
+
+alter table system_users 
+add constraint fk_days_sys 
+foreign key (day_id)
+references days (day_id);
+
+
+alter table non_system_users 
+add column day_id int not null;
+
+alter table non_system_users add
+constraint fk_day_n foreign key (day_id) references days (day_id);
+
+
+three points to consider: 1. if you just want the current date result then just use "=". 2.here we need to see what is the datatype of you date column in the birthday table. if the datatype is datetime then add hh:mm:ss to the date, or if the datatype is just date then just use date. 3. if the date column is int and storing them in timestamp then convert date to microtime and use it.
+
+/*SELECT * FROM system_users WHERE CURDATE() >= STR_TO_DATE(start_time, '%m-%d-%Y') 
+ORDER BY STR_TO_DATE(start_time, '%m-%d-%Y') DESC LIMIT 1
+
+SELECT payment FROM system_users WHERE whatever
+  AND `date` >= DATE(:a)
+  AND `date` <  DATE(:a) + INTERVAL 1 DAY*/
+
+select distinct d.day from days as d
+inner join system_users as su
+where d.day_id=su.day_id and cafe_id=29;
+
+
+create table genders(
+gender_id int auto_increment primary key,
+gender varchar(20) not null unique
+);
+
+insert into genders (gender) values ('male'),('female');
+
+
+delete from system_users;
+
+
+alter table system_users
+change column gender gender_id int not null;
+
+alter table system_users add
+constraint fk_gn_sy foreign key (gender_id) references genders (gender_id);
+
+
+alter table system_users drop foreign key fk_gn_sy;
+
+alter table system_users change column gender_id gender varchar(20) not null;
+
+drop table genders;
+
+
+
+
+
+
+
+
+
+
+
+select payment from system_users where cast(start_time as date)='2019-03-23';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+s trial
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+select sum(select payment from
+select payment from 
+
+select payment,start_time from system_users where cast(start_time as date) in 
+(select distinct cast(start_time as date) from system_users)
+
+
+select sum(payment),start_time from system_users where cast(start_time as date) in 
+('2019-03-29','2019-03-22');
+
+
+
+(select payment,start_time from system_users as abc);
+
+select sum(payment) from 
+
+	select sum(temp.payment),
+	(select payment,cast(start_time as date) as date 
+	from system_users where cast(start_time as date)='2019-03-03') as temp);
+
+
+(select payment,cast(start_time as date) as date from system_users as user) as st;
+
+
+select sum(payment),cast(start_time as date) as date from 
+system_users where cast(start_time as date) and date
+in (select distinct cast(start_time as date) from system_users);
+
+select(
+select sum(payment) from system_users where cast(start_time as date)=
+
+
+
+
+
+select sum(payment) as sandy from system_users where cast(start_time as date)='2019-03-25';
+
+select distinct cast(start_time as date) as date from system_users;//w1
+
+select sum(payment) from system_users where 
+cast(start_time as date) in (select cast(start_time as date) 
+as date from system_users);
+
+
+
+
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+select sum(payment),dayname(cast(start_time as date)) from system_users;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+my trial
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+select dayname('2019-03-22') from system_users;
+
+select distinct dayname('2019-03-23') from system_users
+where cast(start_time as date)='2019-03-23';
+
+SELECT DATE_ADD("2019-03-22", INTERVAL 10 DAY);
+
+
+select distinct dayname('2019-03-23') from system_users where
+cast(start_time as date)=(SELECT DATE_ADD("2019-03-22", INTERVAL 7 DAY));
+
+
+~~~~~ select payment,dayname(cast(start_time as date)) from system_users;
+~~~~~not working >>>> select sum(payment),dayname(cast(start_time as date)) from system_users;
+
+select distinct dayname(cast(start_time as date)) from system_users;
+
+select sum(payment) from system_users where 
+cast(start_time as date) in 
+(select dayname(cast(start_time as date)) from system_users);
+
+
+
+select sum(payment) as total from system_users where 
+cast(start_time as date) in (select dayname(cast(start_time as date)) 
+from system_users);
+
+select sum(payment) as total from system_users
+where 
+cast(start_time as date) in (select dayname(cast(start_time as date)) 
+from system_users);
+
+
+****very close**** select sum(payment) from system_users
+where dayname(cast(start_time as date)); ***********
+
+
+
+select sum(payment) from system_users
+where dayname(cast(start_time as date))<curdate();
+
+
+select sum(payment) from system_users
+where dayname(cast(start_time as date))=
+(SELECT DATE_ADD("2019-03-22", INTERVAL 2 DAY));
+
+select sum(payment) from system_users
+where dayname not exist(cast(start_time as date));
+
+
+#############FINAL QUERY#################
+select cast(start_time as date),sum(payment) as 'income per day' 
+from system_users group by cast(start_time as date);
+
+
+select sum(payment) as 'income per day' 
+from system_users group by cast(start_time as date);
+
+
+select dayname(cast(start_time as date)), sum(payment) as 'income per day' 
+from system_users group by dayname(cast(start_time as date));
+
+
+select sum(payment) as 'income per day' 
+from system_users group by dayname(cast(start_time as date)); 
+
+~~~ select sum(payment) as 'income per day' 
+from system_users where cafe_id=29 group by dayname(cast(start_time as date));
+~~~ 
+
+select sum(payment) as 'income per day' 
+from system_users where cafe_id=29 group by dayname(cast(start_time as date)) order by day_id;
+
+#############FINAL QUERY#################
+
+select distinct d.day from days as d inner join
+system_users as su where d.day_id=su.day_id and cafe_id=29 order by d.day_id;
+
+
+
+select monthname(start_time) as m from system_users 
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+GENDER RATIO COLLECTION:
+
+
+select count(case when gender='male' then 1 end) as male_cnt,
+count(case when gender='female' then 1 end) as female_cnt,
+count(*) as total
+from system_users
+where cafe_id=29;
+
+select count(case when gender='male' then 1 end)
+as male_cnt,count(case when gender='female' then 1 end)
+as female_cnt from system_users where cafe_id=29;
+
+
+select count(case when gender='male' then 1 end) as male_count
+from system_users where cafe_id=29;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -13,7 +13,7 @@
 	<table id='table'>
 	  <tr>
 	    <td>
-			E-mail: <a href=''>deeptipatel1416@gmail.com</a>
+			E-mail: <a href=''>deeptipatel2404@gmail.com</a>
 		</td>
 	  </tr>
 	  <tr>
